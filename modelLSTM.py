@@ -170,10 +170,7 @@ class modelLSTMVent(nn.Module):
 
 
 
-if useGPU:
-    model = modelLSTMVent(1,32,2).cuda()
-else:
-    model = modelLSTMVent(1, 32, 2)
+model = modelLSTMVent(1, 32, 2)
 print("class read")
 inputs,targets = GenerateInputs.getInputs()
 print("inputs read")
