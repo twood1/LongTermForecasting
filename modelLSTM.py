@@ -6,6 +6,8 @@ import torch.optim as optim
 import GenerateInputs
 
 useGPU = False
+SAVEPATH = './model.pth'
+
 
 class modelLSTMVent(nn.Module):
 
@@ -182,8 +184,9 @@ def train():
             model.zero_grad()
             model.zero_all_lstm_grads()
 
-            if i % 1000 == 0:
+            if i % 1000 == 5:
                 print(i)
+
 
             input1 = inputs[i]
             currentTargets = targets[i]
@@ -200,7 +203,7 @@ def train():
             optimizer.step()
 
             i = i+1
-        torch.save(model, 'C:/PythonProj/LSTM-LongTermForecasting/model.pth')
+        torch.save(model, SAVEPATH)
         print("epoch #"+str(epoch)+" loss = "+str(epochLoss/len(inputs)))
 
-#train()
+train()

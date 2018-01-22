@@ -7,9 +7,10 @@ def getZeroIndex(array):
     return i
 
 def getInputs():
-    myfile = open('Forecast/Data/LSTMDataVentriclesForecastLeaderBoardTrainParsed.csv','r')
+    myfile = open('./Forecast/Data/LSTMDataVentriclesForecastLeaderBoardTrainParsed.csv','r')
     lines = []
     i = 0
+    print("got here1")
     for line in myfile:
         if i == 0:
             i += 1
@@ -73,5 +74,5 @@ def getInputs():
         targets.append([[float(arr2[-1])],t1,t2,t3,t4,t5,t6,t7,t8,t9,t10,t11])
 
         i += 1
-
+    print("got here2")
     return inputs,targets
