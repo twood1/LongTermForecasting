@@ -169,9 +169,9 @@ class modelLSTMVent(nn.Module):
         return alpha*term1 + (1-alpha)*term2
 
 
-
-model = modelLSTMVent(1, 32, 2)
 print("class read")
+model = modelLSTMVent(1, 32, 2)
+print("model created")
 inputs,targets = GenerateInputs.getInputs()
 print("inputs read")
 optimizer = optim.SGD(model.parameters(), lr=0.1)
