@@ -174,8 +174,12 @@ if useGPU:
     model = modelLSTMVent(1,32,2).cuda()
 else:
     model = modelLSTMVent(1, 32, 2)
+print("class read")
 inputs,targets = GenerateInputs.getInputs()
+print("inputs read")
 optimizer = optim.SGD(model.parameters(), lr=0.1)
+
+
 
 def train():
     for epoch in range(100):
