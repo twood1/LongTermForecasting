@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="066e26d6-4aaf-455b-857a-235c53c5933c" name="Default" comment="" />
+    <list default="true" id="066e26d6-4aaf-455b-857a-235c53c5933c" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Forecast" afterPath="$PROJECT_DIR$/Forecast" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -140,24 +142,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LSTM-LongTermForecasting" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LSTM-LongTermForecasting" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Forecast" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Data" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -170,6 +154,9 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/PythonProj/LSTM-LongTermForecasting/LSTM-Unit.py" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\PythonProj\LSTM-LongTermForecasting\Forecast" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\PythonProj\LSTM-LongTermForecasting\data" />
       <recent name="C:\PythonProj\LSTM-LongTermForecasting" />
@@ -587,7 +574,7 @@
     <entry file="file://$PROJECT_DIR$/data/data/names/Chinese.txt" />
     <entry file="file://$PROJECT_DIR$/LSTM-Unit.py" />
     <entry file="file://$PROJECT_DIR$/data/LSTMDataVentriclesForecastLeaderBoardTrainParsed.csv" />
-    <entry file="file://$PROJECT_DIR$/Forecast/Data/LSTMDataVentriclesForecastLeaderBoardTrainParsed.csv">
+    <entry file="file://$PROJECT_DIR$/Forecast/LSTMDataVentriclesForecastLeaderBoardTrainParsed.csv">
       <provider selected="true" editor-type-id="LargeFileEditor">
         <state relative-caret-position="340">
           <caret line="20" column="4739" lean-forward="true" selection-start-line="20" selection-start-column="4739" selection-end-line="20" selection-end-column="4764" />
