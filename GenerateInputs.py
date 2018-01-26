@@ -8,7 +8,7 @@ def getZeroIndex(array):
 
 def getInputs():
     print("opening file")
-    myfile = open('./Forecast/Data/LSTMDataVentriclesForecastLeaderBoardTrainParsed.csv','r')
+    myfile = open('./Data/LSTMDataVentriclesForecastLeaderBoardTrainParsed.csv','r')
     lines = []
     i = 0
     print("got here1")
