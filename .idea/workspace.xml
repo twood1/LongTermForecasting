@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="066e26d6-4aaf-455b-857a-235c53c5933c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Forecast" afterPath="$PROJECT_DIR$/Forecast" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/LSTMDataVentriclesForecastLeaderBoardParsed.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/LSTMDataVentriclesForecastLeaderBoardTrainParsed.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/TestingElectrictyDS.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/TrainingElectrictyDS.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/electricityDSTestingTS.csv" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Forecast" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -138,7 +143,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Forecast" />
+              <option name="myItemId" value="Data" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -155,6 +160,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\PythonProj\LSTM-LongTermForecasting\Data" />
       <recent name="C:\PythonProj\LSTM-LongTermForecasting\Forecast" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
@@ -462,7 +468,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/LSTMDataVentriclesForecastLeaderBoardTrainParsed.csv" />
+    <entry file="file://$PROJECT_DIR$/Data/LSTMDataVentriclesForecastLeaderBoardTrainParsed.csv" />
     <entry file="file://$PROJECT_DIR$/modelLSTM.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="986">
@@ -496,7 +502,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/LSTMDataVentriclesForecastLeaderBoardTrainParsed.csv" />
+    <entry file="file://$PROJECT_DIR$/Data/LSTMDataVentriclesForecastLeaderBoardTrainParsed.csv" />
     <entry file="file://$PROJECT_DIR$/modelLSTM.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1241">
@@ -530,7 +536,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/LSTMDataVentriclesForecastLeaderBoardTrainParsed.csv" />
+    <entry file="file://$PROJECT_DIR$/Data/LSTMDataVentriclesForecastLeaderBoardTrainParsed.csv" />
     <entry file="file://$PROJECT_DIR$/modelLSTM.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -573,7 +579,7 @@
     <entry file="file://$PROJECT_DIR$/data/data/eng-fra.txt" />
     <entry file="file://$PROJECT_DIR$/data/data/names/Chinese.txt" />
     <entry file="file://$PROJECT_DIR$/LSTM-Unit.py" />
-    <entry file="file://$PROJECT_DIR$/data/LSTMDataVentriclesForecastLeaderBoardTrainParsed.csv" />
+    <entry file="file://$PROJECT_DIR$/Data/LSTMDataVentriclesForecastLeaderBoardTrainParsed.csv" />
     <entry file="file://$PROJECT_DIR$/Forecast/LSTMDataVentriclesForecastLeaderBoardTrainParsed.csv">
       <provider selected="true" editor-type-id="LargeFileEditor">
         <state relative-caret-position="340">
