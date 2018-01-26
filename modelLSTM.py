@@ -5,10 +5,11 @@ import torch.nn.functional as F
 import torch.optim as optim
 import GenerateInputs
 
-print("done importing")
+
 useGPU = False
 SAVEPATH = './model.pth'
 
+print(torch.cuda.is_available())
 
 class modelLSTMVent(nn.Module):
 
