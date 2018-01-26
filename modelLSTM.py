@@ -179,14 +179,14 @@ optimizer = optim.SGD(model.parameters(), lr=0.1)
 
 
 def train():
-    for epoch in range(100):
+    for epoch in range(500):
         i= 0
         epochLoss = 0
         while i < len(inputs):
             model.zero_grad()
             model.zero_all_lstm_grads()
 
-            if i % 1000 == 5:
+            if i % 5000 == 0:
                 print(i)
 
 
