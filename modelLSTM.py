@@ -186,7 +186,7 @@ def train():
             model.zero_grad()
             model.zero_all_lstm_grads()
 
-            if i % 5000 == 0:
+            if i % 1000 == 0:
                 print(i)
 
 
