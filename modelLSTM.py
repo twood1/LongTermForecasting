@@ -6,7 +6,7 @@ import torch.optim as optim
 import GenerateInputs
 
 
-useGPU = False
+useGPU = True
 SAVEPATH = './model.pth'
 
 print(torch.cuda.is_available())
@@ -94,18 +94,32 @@ class modelLSTMVent(nn.Module):
         for i in range(20):
             if float(input[0][i].data) == 0.0:
                 break
-            inputMain = input[0][i].view(1,1,-1)
-            inputf1 = input[1][i].view(1, 1, -1)
-            inputf2 = input[2][i].view(1, 1, -1)
-            inputf3 = input[3][i].view(1, 1, -1)
-            inputf4 = input[4][i].view(1, 1, -1)
-            inputf5 = input[5][i].view(1, 1, -1)
-            inputf6 = input[6][i].view(1, 1, -1)
-            inputf7 = input[7][i].view(1, 1, -1)
-            inputf8 = input[8][i].view(1, 1, -1)
-            inputf9 = input[9][i].view(1, 1, -1)
-            inputf10 = input[10][i].view(1, 1, -1)
-            inputf11 = input[11][i].view(1, 1, -1)
+            if useGPU:
+                inputMain = input[0][i].view(1, 1, -1).cuda()
+                inputf1 = input[1][i].view(1, 1, -1).cuda()
+                inputf2 = input[2][i].view(1, 1, -1).cuda()
+                inputf3 = input[3][i].view(1, 1, -1).cuda()
+                inputf4 = input[4][i].view(1, 1, -1).cuda()
+                inputf5 = input[5][i].view(1, 1, -1).cuda()
+                inputf6 = input[6][i].view(1, 1, -1).cuda()
+                inputf7 = input[7][i].view(1, 1, -1).cuda()
+                inputf8 = input[8][i].view(1, 1, -1).cuda()
+                inputf9 = input[9][i].view(1, 1, -1).cuda()
+                inputf10 = input[10][i].view(1, 1, -1).cuda()
+                inputf11 = input[11][i].view(1, 1, -1).cuda()
+            else:
+                inputMain = input[0][i].view(1,1,-1)
+                inputf1 = input[1][i].view(1, 1, -1)
+                inputf2 = input[2][i].view(1, 1, -1)
+                inputf3 = input[3][i].view(1, 1, -1)
+                inputf4 = input[4][i].view(1, 1, -1)
+                inputf5 = input[5][i].view(1, 1, -1)
+                inputf6 = input[6][i].view(1, 1, -1)
+                inputf7 = input[7][i].view(1, 1, -1)
+                inputf8 = input[8][i].view(1, 1, -1)
+                inputf9 = input[9][i].view(1, 1, -1)
+                inputf10 = input[10][i].view(1, 1, -1)
+                inputf11 = input[11][i].view(1, 1, -1)
 
             lstmMain_out, lstmMainhidden = self.lstmMain(inputMain,lstmMainhidden)
             lstm1_out, lstm1hidden = self.lstm1(inputf1, lstm1hidden)
@@ -120,9 +134,12 @@ class modelLSTMVent(nn.Module):
             lstm10_out, lstm10hidden = self.lstm10(inputf10, lstm10hidden)
             lstm11_out, lstm11hidden = self.lstm11(inputf11, lstm11hidden)
 
-
-        targetIn = torch.cat((  lstmMain_out,lstm1_out,lstm2_out,lstm3_out,lstm4_out,lstm5_out,lstm6_out,
-                                lstm7_out,lstm8_out,lstm9_out,lstm10_out,lstm11_out)).view(-1,self.hidden_dim*12)
+        if useGPU:
+            targetIn = torch.cat((  lstmMain_out,lstm1_out,lstm2_out,lstm3_out,lstm4_out,lstm5_out,lstm6_out,
+                                lstm7_out,lstm8_out,lstm9_out,lstm10_out,lstm11_out)).view(-1,self.hidden_dim*12).cuda()
+        else:
+            targetIn = torch.cat((lstmMain_out, lstm1_out, lstm2_out, lstm3_out, lstm4_out, lstm5_out, lstm6_out,
+                                  lstm7_out, lstm8_out, lstm9_out, lstm10_out, lstm11_out)).view(-1,self.hidden_dim * 12)
 
         targetOut = self.targetLayer(targetIn)
 
@@ -170,11 +187,11 @@ class modelLSTMVent(nn.Module):
         return alpha*term1 + (1-alpha)*term2
 
 
-print("class read")
-model = modelLSTMVent(1, 32, 2)
-print("model created")
+if useGPU:
+    model = modelLSTMVent(1, 32, 2).cuda()
+else:
+    model = modelLSTMVent(1, 32, 2)
 inputs,targets = GenerateInputs.getInputs()
-print("inputs read")
 optimizer = optim.SGD(model.parameters(), lr=0.1)
 
 
@@ -195,7 +212,10 @@ def train():
             currentTargets = targets[i]
             j = 0
             while j < len(currentTargets):
-                currentTargets[j] = autograd.Variable(torch.FloatTensor(currentTargets[j])).view(-1)
+                if useGPU:
+                    currentTargets[j] = autograd.Variable(torch.FloatTensor(currentTargets[j])).view(-1).cuda()
+                else:
+                    currentTargets[j] = autograd.Variable(torch.FloatTensor(currentTargets[j])).view(-1).cuda()
                 j += 1
 
             yhat,xhats = model.forward(input1)
