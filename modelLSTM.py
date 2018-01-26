@@ -215,7 +215,7 @@ def train():
                 if useGPU:
                     currentTargets[j] = autograd.Variable(torch.FloatTensor(currentTargets[j])).view(-1).cuda()
                 else:
-                    currentTargets[j] = autograd.Variable(torch.FloatTensor(currentTargets[j])).view(-1).cuda()
+                    currentTargets[j] = autograd.Variable(torch.FloatTensor(currentTargets[j])).view(-1)
                 j += 1
 
             yhat,xhats = model.forward(input1)
