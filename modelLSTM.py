@@ -6,7 +6,7 @@ import torch.optim as optim
 import GenerateInputs
 
 
-useGPU = True
+useGPU = False
 SAVEPATH = './model.pth'
 
 print(torch.cuda.is_available())
