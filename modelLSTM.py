@@ -171,6 +171,7 @@ class modelLSTMVent(nn.Module):
         self.lstm9.zero_grad()
         self.lstm10.zero_grad()
         self.lstm11.zero_grad()
+        self.lstmMain.zero_grad()
 
 
     def custom_loss(self,x,y,targets,alpha):
@@ -201,8 +202,8 @@ def train():
         i= 0
         epochLoss = 0
         while i < len(inputs):
-            model.zero_grad()
             model.zero_all_lstm_grads()
+            model.zero_grad()
 
             if i % 10 == 0:
                 print(i)
