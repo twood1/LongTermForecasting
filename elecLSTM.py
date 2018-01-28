@@ -118,7 +118,7 @@ optimizer = optim.SGD(model.parameters(), lr=0.1)
 
 
 def train():
-    for epoch in range(500):
+    for epoch in range(300):
         i= 0
         epochLoss = 0
         while i < len(inputs):

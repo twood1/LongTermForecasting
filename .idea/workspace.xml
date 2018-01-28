@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="066e26d6-4aaf-455b-857a-235c53c5933c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modelLSTM.py" afterPath="$PROJECT_DIR$/modelLSTM.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/elecLSTM.py" afterPath="$PROJECT_DIR$/elecLSTM.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -67,8 +66,8 @@
       <file leaf-file-name="elecLSTM.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/elecLSTM.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="166">
-              <caret line="124" column="29" lean-forward="true" selection-start-line="124" selection-start-column="29" selection-end-line="124" selection-end-column="29" />
+            <state relative-caret-position="149">
+              <caret line="120" column="24" lean-forward="false" selection-start-line="120" selection-start-column="24" selection-end-line="120" selection-end-column="24" />
               <folding>
                 <element signature="e#0#12#0" expanded="true" />
                 <element signature="e#1097#1565#0" expanded="false" />
@@ -708,8 +707,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/elecLSTM.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="124" column="29" lean-forward="true" selection-start-line="124" selection-start-column="29" selection-end-line="124" selection-end-column="29" />
+        <state relative-caret-position="149">
+          <caret line="120" column="24" lean-forward="false" selection-start-line="120" selection-start-column="24" selection-end-line="120" selection-end-column="24" />
           <folding>
             <element signature="e#0#12#0" expanded="true" />
             <element signature="e#1097#1565#0" expanded="false" />
