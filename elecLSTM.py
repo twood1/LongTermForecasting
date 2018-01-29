@@ -4,6 +4,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 import torch.optim as optim
 import GenerateInputsElec
+import inspect
 
 
 useGPU = False
@@ -44,7 +45,8 @@ class modelLSTMVent(nn.Module):
 
 
         while i < len(input):
-            input[i] = autograd.Variable(torch.FloatTensor(input[i])).view(129,1,-1)
+            if not isinstance(input[i],autograd.Variable):
+                input[i] = autograd.Variable(torch.FloatTensor(input[i])).view(129,1,-1)
             i += 1
 
         lstm1hidden = self.init_hidden()
@@ -118,6 +120,7 @@ optimizer = optim.SGD(model.parameters(), lr=0.1)
 
 
 def train():
+    first=True
     for epoch in range(200):
         i= 0
         epochLoss = 0
@@ -131,13 +134,14 @@ def train():
 
             input1 = inputs[i]
             currentTargets = targets[i]
-            j = 0
-            while j < len(currentTargets):
-                if useGPU:
-                    currentTargets[j] = autograd.Variable(torch.FloatTensor(currentTargets[j])).view(-1).cuda()
-                else:
-                    currentTargets[j] = autograd.Variable(torch.FloatTensor(currentTargets[j])).view(-1)
-                j += 1
+            if first:
+                j = 0
+                while j < len(currentTargets):
+                    if useGPU:
+                        currentTargets[j] = autograd.Variable(torch.FloatTensor(currentTargets[j])).view(-1).cuda()
+                    else:
+                        currentTargets[j] = autograd.Variable(torch.FloatTensor(currentTargets[j])).view(-1)
+                    j += 1
 
             yhat,xhats = model.forward(input1)
 
@@ -145,8 +149,8 @@ def train():
             loss.backward()
             epochLoss += float(loss.data[0])
             optimizer.step()
-
             i = i+1
+        first=False
         torch.save(model, SAVEPATH)
         print("epoch #"+str(epoch)+" loss = "+str(epochLoss/len(inputs)))
 

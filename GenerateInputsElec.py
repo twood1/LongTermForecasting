@@ -13,7 +13,6 @@ def getNums():
     myfile = open('./Data/TrainingElectrictyDS.csv', 'r')
     lines = []
     i = 0
-    print("got here.elec1")
     for line in myfile:
         if i == 0:
             i += 1
@@ -85,16 +84,12 @@ def getInputs():
             t2.append((arr[zeroIdx - 2] - means[2]) / stds[2])
             t3.append((arr[zeroIdx - 1] - means[1]) / stds[1])
 
-        if i == 4877:
-            print(arr2[0:30])
-            print(str(inputElec)+"------")
         inputs.append([inputElec, f1, f2, f3])
         toadd = float(arr2[-1])
         toadd = [(toadd - means[0]) / stds[0]]
         targets.append([toadd, t1, t2, t3])
 
         i += 1
-    print("got here.elec2")
     return inputs,targets
 
 
